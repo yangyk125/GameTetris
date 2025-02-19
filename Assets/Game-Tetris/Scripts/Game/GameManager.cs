@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting.FullSerializer;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace GameTetris
@@ -62,6 +63,9 @@ namespace GameTetris
         private GameObjectPool _gameTilePool = null;
 
         private Vector2 _userInputTest;
+        private RepeatEventFilter _repeatFilterLeft = new RepeatEventFilter(0.4f, 0.04f);
+        private RepeatEventFilter _repeatFilterBottom = new RepeatEventFilter(0.4f, 0.04f);
+        private RepeatEventFilter _repeatFilterRight = new RepeatEventFilter(0.4f, 0.04f);
 
         // Start is called before the first frame update
         private void Start()
@@ -216,25 +220,40 @@ namespace GameTetris
             _userInputTest.x = Input.GetAxis("Horizontal");
             _userInputTest.y = Input.GetAxis("Vertical");
 
-            if (Input.GetButtonUp("Vertical"))
+            if (_userInputTest.y > 0)
             {
-                if (_userInputTest.y > 0)
-                    _gameProcessor.DoInputActionRotateCCW();
-                else if (_userInputTest.y < 0)
-                    _gameProcessor.DoInputActionDown();
+                if (Input.GetButtonUp("Vertical"))
+                    DoInputActionFallToBottom();
+            }
+            else if (_userInputTest.y < 0)
+            {
+                if (_repeatFilterBottom.RepeatFilter())
+                    DoInputActionDown();
+            }
+            else
+            {
+                _repeatFilterBottom.FinishFilter();
             }
 
-            if (Input.GetButtonUp("Horizontal"))
+            if (_userInputTest.x > 0)
             {
-                if (_userInputTest.x > 0)
-                    _gameProcessor.DoInputActionRight();
-                else if (_userInputTest.x < 0)
-                    _gameProcessor.DoInputActionLeft();
+                if (_repeatFilterRight.RepeatFilter())
+                    DoInputActionRight();
+            }
+            else if (_userInputTest.x < 0)
+            {
+                if (_repeatFilterLeft.RepeatFilter())
+                    DoInputActionLeft();
+            }
+            else
+            {
+                _repeatFilterLeft.FinishFilter();
+                _repeatFilterRight.FinishFilter();
             }
 
             if (Input.GetButtonUp("Jump"))
             {
-                _gameProcessor.DoInputActionFallToBottom();
+                DoInputActionRotateCW();
             }
         }
 

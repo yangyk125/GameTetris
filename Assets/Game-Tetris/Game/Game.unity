@@ -407,8 +407,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  RepeatDelay: 0.5
-  RepeatInterval: 0.05
+  RepeatDelay: 0.4
+  RepeatInterval: 0.04
   m_OnRepeatClick:
     m_PersistentCalls:
       m_Calls: []
@@ -2118,8 +2118,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  RepeatDelay: 0.5
-  RepeatInterval: 0.05
+  RepeatDelay: 0.4
+  RepeatInterval: 0.04
   m_OnRepeatClick:
     m_PersistentCalls:
       m_Calls: []
@@ -3324,8 +3324,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  RepeatDelay: 0.5
-  RepeatInterval: 0.05
+  RepeatDelay: 0.4
+  RepeatInterval: 0.04
   m_OnRepeatClick:
     m_PersistentCalls:
       m_Calls: []
@@ -4313,8 +4313,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  RepeatDelay: 0.5
-  RepeatInterval: 0.05
+  RepeatDelay: 0.4
+  RepeatInterval: 0.04
   m_OnRepeatClick:
     m_PersistentCalls:
       m_Calls: []

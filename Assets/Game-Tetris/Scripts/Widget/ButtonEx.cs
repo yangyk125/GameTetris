@@ -20,8 +20,8 @@ public class ButtonEx : Selectable, IPointerClickHandler, IPointerDownHandler, I
 
 
     [SerializeField]
-    public float RepeatDelay = 0.3f;
-    public float RepeatInterval = 0.03f;
+    public float RepeatDelay = 0.4f;
+    public float RepeatInterval = 0.04f;
 
 
     [FormerlySerializedAs("onRepeatClick")]
@@ -70,6 +70,7 @@ public class ButtonEx : Selectable, IPointerClickHandler, IPointerDownHandler, I
 
         _isPressDown = true;
         _timePressDown = Time.time;
+        _timeLastRepeat = -1.0f;
 
         m_OnRepeatClick.Invoke();
     }
@@ -77,7 +78,6 @@ public class ButtonEx : Selectable, IPointerClickHandler, IPointerDownHandler, I
     public override void OnPointerUp(PointerEventData eventData)
     {
         _isPressDown = false;
-
         _timePressDown = -1.0f;
         _timeLastRepeat = -1.0f;
 
