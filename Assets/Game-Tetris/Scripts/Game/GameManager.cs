@@ -227,7 +227,7 @@ namespace GameTetris
             }
             else if (_userInputTest.y < 0)
             {
-                if (_repeatFilterBottom.RepeatFilter())
+                if (Input.GetButton("Vertical") && _repeatFilterBottom.RepeatFilter())
                     DoInputActionDown();
             }
             else
@@ -237,12 +237,12 @@ namespace GameTetris
 
             if (_userInputTest.x > 0)
             {
-                if (_repeatFilterRight.RepeatFilter())
+                if (Input.GetButton("Horizontal") && _repeatFilterRight.RepeatFilter())
                     DoInputActionRight();
             }
             else if (_userInputTest.x < 0)
             {
-                if (_repeatFilterLeft.RepeatFilter())
+                if (Input.GetButton("Horizontal") && _repeatFilterLeft.RepeatFilter())
                     DoInputActionLeft();
             }
             else
