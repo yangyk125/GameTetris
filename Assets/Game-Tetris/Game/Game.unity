@@ -736,6 +736,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3055388485741765336}
+  - {fileID: 1371691090}
   - {fileID: 993806049}
   - {fileID: 1008657226}
   - {fileID: 479091104}
@@ -3601,6 +3602,104 @@ Transform:
   - {fileID: 482727225}
   m_Father: {fileID: 479091104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1371691089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1371691090}
+  - component: {fileID: 1371691091}
+  - component: {fileID: 1371691092}
+  m_Layer: 0
+  m_Name: Joystick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1371691090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371691089}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 248630073}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1371691091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371691089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 7be90ae02241d5e45968280e5d7414fa, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00052e50-35bd-4a43-b13d-904d746b6b83
+    m_ActionName: NewActionMap1/JoystickAxisX[/ USB Gamepad          /stick/left,/
+      USB Gamepad          /stick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84c0f9d1-5b32-4fea-b998-419da3383ca7
+    m_ActionName: NewActionMap1/JoystickAxisY[/ USB Gamepad          /stick/down,/
+      USB Gamepad          /stick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 382c0e6b-dc13-4560-b495-e8d22e29e6b9
+    m_ActionName: NewActionMap1/MoveUp[/ USB Gamepad          /stick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 510a0650-f3b7-4d7b-bf59-2fc1223f0cb0
+    m_ActionName: NewActionMap1/RotateCW[/ USB Gamepad          /button2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0a559800-ee79-4877-8b3e-dc4a0b9d2361
+    m_ActionName: NewActionMap1/RotateCCW[/ USB Gamepad          /button4]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: NewActionMap1
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1371691092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371691089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73097f5c230fcc42bcf5488000bf1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 248630074}
 --- !u!1 &1404744857
 GameObject:
   m_ObjectHideFlags: 0

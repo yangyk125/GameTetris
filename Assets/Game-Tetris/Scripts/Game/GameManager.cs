@@ -63,9 +63,6 @@ namespace GameTetris
         private GameObjectPool _gameTilePool = null;
 
         private Vector2 _userInputTest;
-        private RepeatEventFilter _repeatFilterLeft = new RepeatEventFilter(0.4f, 0.04f);
-        private RepeatEventFilter _repeatFilterBottom = new RepeatEventFilter(0.4f, 0.04f);
-        private RepeatEventFilter _repeatFilterRight = new RepeatEventFilter(0.4f, 0.04f);
 
         // Start is called before the first frame update
         private void Start()
@@ -227,29 +224,22 @@ namespace GameTetris
             }
             else if (_userInputTest.y < 0)
             {
-                if (Input.GetButton("Vertical") && _repeatFilterBottom.RepeatFilter())
+                if (Input.GetButtonUp("Vertical"))
                     DoInputActionDown();
             }
-            else
-            {
-                _repeatFilterBottom.FinishFilter();
-            }
+
 
             if (_userInputTest.x > 0)
             {
-                if (Input.GetButton("Horizontal") && _repeatFilterRight.RepeatFilter())
+                if (Input.GetButtonUp("Horizontal"))
                     DoInputActionRight();
             }
             else if (_userInputTest.x < 0)
             {
-                if (Input.GetButton("Horizontal") && _repeatFilterLeft.RepeatFilter())
+                if (Input.GetButtonUp("Horizontal"))
                     DoInputActionLeft();
             }
-            else
-            {
-                _repeatFilterLeft.FinishFilter();
-                _repeatFilterRight.FinishFilter();
-            }
+
 
             if (Input.GetButtonUp("Jump"))
             {

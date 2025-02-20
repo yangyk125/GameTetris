@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game-Tetris/Game/Game.unity
     guid: 925f43090b6c6d3429e86baa4d793893
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 7a733c4b74efd6c4eb2c5b249c7fbaad, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 7be90ae02241d5e45968280e5d7414fa, type: 3}

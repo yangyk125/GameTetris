@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class RepeatEventFilter
+public class RepeatFilter
 {
     private float _RepeatDelay = 0.4f;
     private float _RepeatInterval = 0.04f;
@@ -12,21 +12,23 @@ public class RepeatEventFilter
     private float _timePressDown = 0f;
     private float _timeLastRepeat = 0f;
 
-    public RepeatEventFilter(float delay, float interval)
+    public RepeatFilter(float delay, float interval)
     {
         _RepeatDelay = delay;
         _RepeatInterval = interval;
     }
 
-    public bool RepeatFilter()
+    public void Press()
+    {
+        _isPressDown = true;
+        _timePressDown = Time.time;
+        _timeLastRepeat = -1.0f;
+    }
+
+    public bool Repeat()
     {
         if (!_isPressDown)
-        {
-            _isPressDown = true;
-            _timePressDown = Time.time;
-            _timeLastRepeat = -1.0f;
-            return true;
-        }
+            return false;
 
         if (Time.time - _timePressDown > _RepeatDelay)
         {
@@ -45,7 +47,7 @@ public class RepeatEventFilter
         return false;
     }
 
-    public void FinishFilter()
+    public void Release()
     {
         _isPressDown = false;
         _timePressDown = -1.0f;
